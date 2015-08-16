@@ -5,4 +5,12 @@
 
 <p>This page is accessible to authenticated user (users that have signed in).</p>
 
+<ul>
+{% for aircraft in my_aircraft %}
+<li>{{ aircraft.id }} {{ aircraft.name }} {{ aircraft.registration }}</li>
+{% else %}
+<li>No current aircraft</li>
+{% endfor %}
+</ul>
+
 {% endblock %}
