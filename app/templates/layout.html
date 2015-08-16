@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>MyApp</title>
+        <title>FlightReady</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -23,7 +23,7 @@
     <body>
         <!-- Application specific HTML -->
         <div id="header-div" class="clearfix with-margins">
-            <div class="pull-left"><a href="{{ url_for('home_page') }}"><span class="header-title">MyApp</span></a></div>
+            <div class="pull-left"><a href="{{ url_for('home_page') }}"><span class="header-title">FlightReady</span></a></div>
             <div class="pull-right">
                 {% if current_user.is_authenticated() %}
                     <a href="{{ url_for('user_profile_page') }}">{{ current_user.first_name or current_user.user_auth.username }}</a>
@@ -62,8 +62,8 @@
         <br/>
         <hr class="no-margins"/>
         <div id="footer-div" class="clearfix with-margins">
-            <div class="pull-left">MyApp v1.0</div>
-            <div class="pull-right">&copy; 2014 MyCorp</div>
+            <div class="pull-left">FlightReady v1.0</div>
+            <div class="pull-right">&copy; 2015 Aldo Longhi</div>
         </div>
 
         <!-- Application specific JS -->
