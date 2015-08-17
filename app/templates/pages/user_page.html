@@ -1,16 +1,32 @@
 {% extends "common/page_base.html" %}  {# common/page_base.html extends layout.html #}
 
+{% block header_extra %}
+        <link rel="stylesheet" href="/static/app/user_page.css">
+{% endblock %}
+
 {% block main %}
-<h1>User page</h1>
+<h1>Welcome, {{ current_user.first_name }}!</h1>
 
-<p>This page is accessible to authenticated user (users that have signed in).</p>
-
-<ul>
+<h3>Your aircraft</h3>
+<table id='my_aircraft'>
+  <tr>
+    <th>Name</th>
+    <th>Registration</th>
+    <th>Actions</th>
+  </tr>
 {% for aircraft in my_aircraft %}
-<li>{{ aircraft.id }} {{ aircraft.name }} {{ aircraft.registration }}</li>
+  <tr>
+    <td>{{ aircraft.name }}</td>
+    <td>{{ aircraft.registration }}</td>
+    <td>Manage | Edit | Delete</td>
+  </tr>
 {% else %}
-<li>No current aircraft</li>
+  <tr>
+    <td colspan='3'>No current aircraft</td>
+  </tr>
 {% endfor %}
-</ul>
+</table>
+
+<a href='{{ url_for( 'create_aircraft_page' ) }}'>Create a new aircraft</a>
 
 {% endblock %}

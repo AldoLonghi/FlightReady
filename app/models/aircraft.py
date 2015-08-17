@@ -36,7 +36,7 @@ class AircraftForm( Form ):
 	registration = StringField( 'Registration', validators=[
 	    validators.DataRequired( 'Registration is required' )] )
 	hobbs = FloatField( 'Hobbs', validators=[
-	    validators.DataRequired( 'Hobbs is required' )] )
+	    validators.Optional(), validators.NumberRange( min=0.0 )] )
 	tach = FloatField( 'Tach', validators=[
-	    validators.DataRequired( 'Tach is required' )] )
+	    validators.Optional(), validators.NumberRange( min=0.0 )] )
 	submit = SubmitField( 'Save' )

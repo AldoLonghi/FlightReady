@@ -58,7 +58,7 @@ def create_app(extra_config_settings={}):
     from app import models
 
     # Load all views.py files to register @app.routes() with Flask
-    from app.views import page_views, user_views
+    from app.views import aircraft_views, page_views, user_views
 
     return app
 
